@@ -1,67 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<title>Mi Comunidad</title>
+<meta charset="UTF-8">
+<title>Login Profesional</title>
+
+<!-- ICONOS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ===============================
+   VARIABLES
+================================*/
+:root{
+    --dorado:#DBB42C;
+}
+
+/* ===============================
+   BODY CENTRADO PERFECTO
+================================*/
+body{
+    margin:0;
+    height:100vh;
+    font-family:Segoe UI;
+    background:#0d0d0d;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* fondo minimalista */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#111,#1a1a1a,#111);
+    z-index:-1;
+}
+
+/* ===============================
+   LOGO
+================================*/
+.logo{
+    position:absolute;
+    top:20px;
+    left:30px;
+    color:var(--dorado);
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ===============================
+   TARJETA LOGIN
+================================*/
+.login-card{
+    width:360px;
+    background:#181818;
+    padding:40px 35px;
+    border-radius:14px;
+
+    box-shadow:0 0 25px rgba(219,180,44,.4);
+
+    animation:fade .6s ease;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+    text-align:center;
+    color:var(--dorado);
+    margin-bottom:25px;
+}
+
+/* ===============================
+   INPUTS
+================================*/
+.input-group{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.input-group i{
+    position:absolute;
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--dorado);
+}
+
+.input-group input{
+    width:100%;
+    padding:12px 12px 12px 40px;
+    border:none;
+    border-radius:6px;
+    background:#222;
+    color:white;
+    box-sizing:border-box;
+}
+
+/* ===============================
+   OPCIONES
+================================*/
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+    color:white;
+}
+
+/* ===============================
+   BOTÓN
+================================*/
+button{
+    width:100%;
+    margin-top:18px;
+    padding:12px;
+    background:var(--dorado);
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.02);
+}
+
+/* MENSAJE */
+#mensaje{
+    text-align:center;
+    margin-top:12px;
+}
+
+</style>
 </head>
 
-<body style="margin:0; font-family:Arial;">
+<body>
 
-<!-- ENCABEZADO -->
-<div style="background-color:#000000; padding:15px; text-align:center;">
-<h1 style="color:#DBB42C;">Alamoxtitla</h1>
+<div class="logo">Alamoxtitla</div>
+
+<div class="login-card">
+
+<h2>Iniciar Sesión</h2>
+
+<form onsubmit="return login()">
+
+<!-- Usuario -->
+<div class="input-group">
+<i class="fa fa-user"></i>
+<input type="text" id="usuario" placeholder="Usuario">
 </div>
 
-<!-- CONTENEDOR GENERAL -->
-<div style="display:flex; height:90vh;">
-
-<!-- MENU LATERAL -->
-<div style="width:20%; background-color:#0D0D0D; padding:20px;">
-
-<h2><a href="index.html" style="background:#black; color:#DBB42C; padding:8px 14px;
-text-decoration:none; font-weight:bold;">
-Revisar
-</a></h2>
-<h2><a href="Revisar-Revisado/index.html" style="background:#black; color:#DBB42C; padding:8px 14px;
-text-decoration:none; font-weight:bold;">
-Revisado
-</a><h2>
-<h2><a href="Usuarios-Bloqueos/Usuarios.html" style="background:#black; color:#DBB42C; padding:8px 14px;
-text-decoration:none; font-weight:bold;">
-Publicar
-</a></h2>
-<h2><a href="Usuarios-Bloqueos/Usuarios.html" style="background:#black; color:#DBB42C; padding:8px 14px;
-text-decoration:none; font-weight:bold;">
-Usuario
-</a></h2>
-<h2><a href="Usuarios-Bloqueos/Bloqueos.html" style="background:#black; color:#DBB42C; padding:8px 14px;
-text-decoration:none; font-weight:bold;">
-Bloqueos
-</a>
-</h2>
-<br><br><br>
-<a href="../Revisar-Revisado/Revisar.html" style="background:#DBB42C; color:black; padding:8px 14px;
-border-radius:6px; text-decoration:none; font-weight:bold; margin-right:15px;">
-Cerrar Seción
-</a>
+<!-- Password -->
+<div class="input-group">
+<i class="fa fa-lock"></i>
+<input type="password" id="password" placeholder="Contraseña">
 </div>
 
-<!-- CONTENIDO PRINCIPAL -->
-<div style="width:80%; background-color:#242424; padding:20px;">
-<center>
-<h1 style="color:white;">Avisos</h1>
-<p style="color:lightgray;">Bienvenido a tu comunidad</p>
-</center>
-<img src="recursos/imagen1.jpg" width="300" height="200"> <br><br>
-<img src="recursos/imagen1.jpg" width="300" height="200"> <br><br>
-<img src="recursos/imagen1.jpg" width="300" height="200"> <br><br>
-</div>
+<div class="options">
+
+<label>
+<input type="checkbox" id="recordar">
+Recordar
+</label>
+
+<span onclick="verPassword()" style="cursor:pointer;">
+👁 Mostrar
+</span>
 
 </div>
+
+<button>Ingresar</button>
+
+<p id="mensaje"></p>
+
+</form>
+
+</div>
+
+<script>
+
+/* ===============================
+   RECUPERAR USUARIO GUARDADO
+================================*/
+window.onload=function(){
+
+let user=localStorage.getItem("usuario");
+
+if(user){
+document.getElementById("usuario").value=user;
+document.getElementById("recordar").checked=true;
+}
+
+}
+
+/* ===============================
+   MOSTRAR PASSWORD
+================================*/
+function verPassword(){
+
+let pass=document.getElementById("password");
+
+pass.type = (pass.type==="password") ? "text" : "password";
+
+}
+
+/* ===============================
+   LOGIN DEMO
+================================*/
+function login(){
+
+let usuario=document.getElementById("usuario").value;
+let password=document.getElementById("password").value;
+let recordar=document.getElementById("recordar").checked;
+
+if(usuario==="admin" && password==="1234"){
+
+document.getElementById("mensaje").innerHTML="✔ Acceso correcto";
+document.getElementById("mensaje").style.color="#DBB42C";
+
+if(recordar){
+localStorage.setItem("usuario",usuario);
+}else{
+localStorage.removeItem("usuario");
+}
+
+}else{
+
+document.getElementById("mensaje").innerHTML="✖ Datos incorrectos";
+document.getElementById("mensaje").style.color="red";
+
+}
+
+return false;
+}
+
+</script>
 
 </body>
 </html>
-
-
-
-
