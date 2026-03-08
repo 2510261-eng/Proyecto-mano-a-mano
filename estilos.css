@@ -1,164 +1,230 @@
-/* GENERAL */
+/* ===================================================== */
+/* HOJA DE ESTILOS DEL PROYECTO "MI COMUNIDAD"           */
+/* Fecha de creación: 07/03/2026                         */
+/* Archivo separado para mejorar organización del código */
+/* ===================================================== */
+
+
+/* -------- ESTILO GENERAL DE LA PÁGINA -------- */
 
 body{
 margin:0;
-font-family:Arial;
-background:#0d0d0d;
+/* Elimina el margen que agregan los navegadores por defecto */
+
+font-family:Arial, Helvetica, sans-serif;
+/* Define la fuente principal del sitio */
+
+background-color:#242424;
+/* Color de fondo general de la página */
+
 color:white;
+/* Color del texto por defecto */
 }
 
 
 
-/* LOGIN */
+/* -------- ENCABEZADO -------- */
 
-#login{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-}
+.encabezado{
+background-color:#000000;
+/* Color negro para el encabezado */
 
-.login-card{
-width:280px;
-background:#181818;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 15px rgba(219,180,44,.4);
-}
-
-.login-card h2{
-text-align:center;
-color:#DBB42C;
-}
-
-.login-card input{
-width:100%;
-padding:10px;
-margin-top:10px;
-background:#222;
-border:none;
-border-radius:5px;
-color:white;
-box-sizing:border-box;
-}
-
-.login-card button{
-width:100%;
-margin-top:10px;
-padding:10px;
-background:#DBB42C;
-border:none;
-border-radius:5px;
-font-weight:bold;
-cursor:pointer;
-}
-
-
-
-/* CONTENIDO */
-
-#contenido{
-display:none;
-}
-
-header{
-background:black;
-text-align:center;
 padding:15px;
-color:#DBB42C;
+/* Espacio interior */
+
+text-align:center;
+/* Centra el texto horizontalmente */
+
+border-bottom:3px solid #DBB42C;
+/* Línea decorativa dorada */
 }
 
 
 
-/* CONTENEDOR */
+.encabezado h1{
+color:#DBB42C;
+/* Color dorado del título */
+
+margin:0;
+/* Elimina margen extra del título */
+}
+
+
+
+/* -------- CONTENEDOR PRINCIPAL -------- */
 
 .contenedor{
 display:flex;
+/* Permite crear columnas */
+
+height:90vh;
+/* Ocupa casi toda la pantalla */
 }
 
 
 
-/* MENU */
+/* -------- MENÚ LATERAL -------- */
 
 .menu{
-width:200px;
-background:#111;
+width:20%;
+/* El menú ocupa el 20% del ancho */
+
+background-color:#0D0D0D;
+/* Fondo oscuro */
+
 padding:20px;
+/* Espacio interior */
 }
+
+
+
+/* -------- BOTONES DEL MENÚ -------- */
 
 .menu a{
 display:block;
+/* Hace que cada enlace ocupe toda la línea */
+
 color:#DBB42C;
+/* Color dorado */
+
+padding:10px;
+/* Espacio interno */
+
 margin-bottom:10px;
+/* Espacio entre botones */
+
 text-decoration:none;
+/* Quita el subrayado */
+
+font-weight:bold;
+/* Texto en negrita */
+
+border-radius:5px;
+/* Bordes redondeados */
+
+transition:0.3s;
+/* Animación suave */
 }
+
+
+
+/* -------- EFECTO CUANDO PASAS EL CURSOR -------- */
 
 .menu a:hover{
-background:#DBB42C;
+background-color:#DBB42C;
+/* Cambia fondo a dorado */
+
 color:black;
-padding:5px;
-border-radius:5px;
+/* Texto negro */
+
+transform:scale(1.05);
+/* Hace que el botón crezca ligeramente */
 }
 
 
 
-/* BOTON LOGOUT */
+/* -------- BOTÓN CERRAR SESIÓN -------- */
 
-.logout{
-margin-top:20px;
-width:100%;
+.cerrar{
+background-color:#DBB42C;
+/* Fondo dorado */
+
+color:black;
+/* Texto negro */
+
 padding:10px;
-background:#DBB42C;
-border:none;
+/* Espacio interior */
+
 border-radius:6px;
-font-weight:bold;
-cursor:pointer;
+/* Bordes redondeados */
+
+margin-top:20px;
+/* Espacio superior */
+
+display:inline-block;
+/* Permite aplicar tamaño correctamente */
 }
 
 
 
-/* MAIN */
+/* -------- CONTENIDO PRINCIPAL -------- */
 
-.main{
-flex:1;
+.contenido{
+width:80%;
+/* Ocupa el resto de la pantalla */
+
 padding:20px;
+/* Espacio interior */
 }
 
 
 
-/* POST */
+/* -------- TÍTULO DE CONTENIDO -------- */
 
-.post{
-background:#1a1a1a;
-border-radius:12px;
-width:320px;
-margin:20px auto;
-padding:10px;
-box-shadow:0 4px 10px rgba(0,0,0,.6);
+.contenido h1{
+text-align:center;
+/* Centra el título */
 }
 
-.post img{
-width:100%;
-height:180px;
-object-fit:cover;
+
+
+/* -------- TEXTO DE BIENVENIDA -------- */
+
+.contenido p{
+text-align:center;
+/* Centra el texto */
+
+color:lightgray;
+/* Color gris claro */
+}
+
+
+
+/* -------- GALERÍA DE AVISOS -------- */
+
+.galeria{
+display:flex;
+/* Organiza imágenes en fila */
+
+flex-direction:column;
+/* Las coloca en columna */
+
+align-items:center;
+/* Centra las imágenes */
+}
+
+
+
+/* -------- ESTILO DE IMÁGENES -------- */
+
+.aviso{
+width:300px;
+/* Ancho de imagen */
+
+height:200px;
+/* Altura de imagen */
+
+margin:10px;
+/* Espacio alrededor */
+
 border-radius:10px;
+/* Bordes redondeados */
+
+box-shadow:0px 5px 10px rgba(0,0,0,0.6);
+/* Sombra */
+
+transition:0.3s;
+/* Animación suave */
 }
 
 
 
-/* BOTON APOYAR */
+/* -------- EFECTO AL PASAR CURSOR -------- */
 
-.apoyo{
-margin-top:10px;
-background:#222;
-color:#DBB42C;
-border:none;
-padding:6px 14px;
-border-radius:20px;
-cursor:pointer;
-}
+.aviso:hover{
+transform:scale(1.05);
+/* La imagen crece ligeramente */
 
-.apoyo:hover{
-background:#DBB42C;
-color:black;
+box-shadow:0px 10px 20px rgba(0,0,0,0.9);
+/* Sombra más fuerte */
 }
