@@ -1,207 +1,100 @@
-<!DOCTYPE html> <!-- Indica al navegador que el documento usa HTML5 -->
+<!DOCTYPE html>
+<html lang="es">
 
-<html lang="es"> <!-- Inicio del documento HTML y se define el idioma español -->
+<head>
 
-<head> <!-- Inicio de la sección de configuración de la página -->
+<meta charset="utf-8">
+<!-- Permite usar caracteres especiales -->
 
-<meta charset="utf-8"> <!-- Permite usar caracteres especiales como ñ, á, é -->
+<title>Mi Comunidad</title>
+<!-- Título de la pestaña -->
 
-<title>Mi Comunidad</title> <!-- Título que aparece en la pestaña del navegador -->
+<link rel="stylesheet" href="estilos.css">
+<!-- 07/03/2026
+Conecta el archivo CSS externo con el HTML -->
 
-</head> <!-- Fin de la configuración de la página -->
-
-
-<body style="margin:0; font-family:Arial;"> 
-<!-- Inicio del cuerpo de la página -->
-<!-- margin:0 elimina el espacio exterior del navegador -->
-<!-- font-family define la fuente general de la página -->
-
+</head>
 
 
-<!-- ================= ENCABEZADO ================= -->
-<!-- Sección superior de la página donde aparece el nombre del sitio -->
+<body>
 
-<div style="background-color:#000000; padding:15px; text-align:center;">
-<!-- Contenedor del encabezado -->
-<!-- background-color define color negro -->
-<!-- padding agrega espacio interno -->
-<!-- text-align:center centra el texto -->
+<!-- ENCABEZADO -->
 
-<h1 style="color:#DBB42C;">Alamoxtitla</h1>
-<!-- Título principal del sitio -->
-<!-- color define el color del texto -->
+<div class="encabezado">
+<!-- 07/03/2026
+Contenedor del encabezado del sitio -->
+
+<h1>Alamoxtitla</h1>
+<!-- Título del sitio -->
 
 </div>
-<!-- Fin del encabezado -->
 
 
 
-<!-- ================= CONTENEDOR GENERAL ================= -->
+<!-- CONTENEDOR GENERAL -->
 
-<div style="display:flex; height:90vh;">
-<!-- Contenedor principal -->
-<!-- display:flex permite dividir la pantalla en columnas -->
-<!-- height:90vh ocupa el 90% de la altura de la ventana -->
-
-
-
-<!-- ================= MENU LATERAL ================= -->
-
-<div style="width:20%; background-color:#0D0D0D; padding:20px;">
-<!-- Menú lateral -->
-<!-- width:20% ocupa el 20% del ancho -->
-<!-- background-color color gris oscuro -->
-<!-- padding espacio interior -->
+<div class="contenedor">
+<!-- 07/03/2026
+Contiene menú y contenido principal -->
 
 
 
-<!-- ================= BOTON REVISAR ================= -->
+<!-- MENU LATERAL -->
 
-<h2>
-<a href="../Revisar-Revisado/Revisar.html"
-style="color:#DBB42C; padding:8px 14px; text-decoration:none; font-weight:bold;">
+<div class="menu">
+
+<a href="../Revisar-Revisado/Revisar.html">
 Revisar
 </a>
-</h2>
-<!-- Botón que dirige a la página Revisar -->
-<!-- href indica el enlace -->
-<!-- text-decoration:none quita el subrayado -->
-<!-- font-weight:bold pone el texto en negrita -->
 
-
-
-<!-- ================= BOTON REVISADO ================= -->
-
-<h2>
-<a href="../Usuarios-Bloqueos/Usuarios.html"
-style="color:#DBB42C; padding:8px 14px; text-decoration:none; font-weight:bold;">
+<a href="../Usuarios-Bloqueos/Usuarios.html">
 Revisado
 </a>
-</h2>
 
-
-
-<!-- ================= BOTON PUBLICAR ================= -->
-
-<h2>
-<a href="../Usuarios-Bloqueos/Usuarios.html"
-style="color:#DBB42C; padding:8px 14px; text-decoration:none; font-weight:bold;">
+<a href="../Usuarios-Bloqueos/Usuarios.html">
 Publicar
 </a>
-</h2>
 
-
-
-<!-- ================= BOTON USUARIO ================= -->
-
-<h2>
-<a href="../Usuarios-Bloqueos/Usuarios.html"
-style="color:#DBB42C; padding:8px 14px; text-decoration:none; font-weight:bold;">
+<a href="../Usuarios-Bloqueos/Usuarios.html">
 Usuario
 </a>
-</h2>
 
-
-
-<!-- ================= BOTON BLOQUEOS ================= -->
-
-<h2>
-<a href="../Usuarios-Bloqueos/Bloqueos.html"
-style="color:#DBB42C; padding:8px 14px; text-decoration:none; font-weight:bold;">
+<a href="../Usuarios-Bloqueos/Bloqueos.html">
 Bloqueos
 </a>
-</h2>
 
 
-
-<!-- Espacios para separar el botón de cerrar sesión -->
-
-<br><br><br>
-
-
-
-<!-- ================= BOTON CERRAR SESION ================= -->
-
-<a href="../Revisar-Revisado/Revisar.html"
-style="background:#DBB42C; color:black; padding:8px 14px;
-border-radius:6px; text-decoration:none; font-weight:bold;">
+<a class="cerrar" href="../Revisar-Revisado/Revisar.html">
 Cerrar Sesión
 </a>
-<!-- Botón que simula cerrar sesión -->
-<!-- border-radius redondea las esquinas -->
-
-
 
 </div>
-<!-- Fin del menú lateral -->
 
 
 
-<!-- ================= CONTENIDO PRINCIPAL ================= -->
+<!-- CONTENIDO PRINCIPAL -->
 
-<div style="width:80%; background-color:#242424; padding:20px;">
-<!-- Área principal de contenido -->
-<!-- width:80% ocupa el resto del espacio -->
-<!-- background-color gris oscuro -->
-<!-- padding espacio interior -->
+<div class="contenido">
 
+<h1>Avisos</h1>
 
-
-<center>
-<!-- Centra el contenido dentro del contenedor -->
-
-<h1 style="color:white;">Avisos</h1>
-<!-- Título de la sección -->
-
-<p style="color:lightgray;">Bienvenido a tu comunidad</p>
-<!-- Texto de bienvenida -->
-
-</center>
+<p>Bienvenido a tu comunidad</p>
 
 
 
-<!-- ================= IMAGENES DE AVISOS ================= -->
+<div class="galeria">
 
-<img src="recursos/imagen1.jpg" width="300" height="200">
-<!-- Imagen de aviso -->
-<!-- src indica la ruta de la imagen -->
+<img src="recursos/imagen1.jpg" class="aviso">
 
-<br><br>
+<img src="recursos/imagen1.jpg" class="aviso">
 
-<img src="recursos/imagen1.jpg" width="300" height="200">
-<!-- Segunda imagen -->
-
-<br><br>
-
-<img src="recursos/imagen1.jpg" width="300" height="200">
-<!-- Tercera imagen -->
-
-
+<img src="recursos/imagen1.jpg" class="aviso">
 
 </div>
-<!-- Fin del contenido principal -->
-
-
 
 </div>
-<!-- Fin del contenedor general -->
 
-
+</div>
 
 </body>
-<!-- Fin del cuerpo de la página -->
-
 </html>
-<!-- Fin del documento HTML -->
-
-
-
-<!-- ================= MEJORAS AGREGADAS ================= -->
-<!-- Fecha: 07/03/2026 -->
-
-<!--
-1 Se corrigió una etiqueta <h2> que no estaba cerrada.
-2 Se organizó mejor la estructura del código.
-3 Se añadieron comentarios explicando cada línea.
-4 Se mantuvo el mismo diseño original para no afectar tu proyecto.
--->
