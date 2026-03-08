@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 <title>Alamoxtitla</title>
 
-<!-- conecta la hoja de estilos -->
+<!-- conecta CSS -->
 <link rel="stylesheet" href="estilos.css">
 
 </head>
@@ -13,19 +14,20 @@
 <body>
 
 
-<!-- ===========================
-     LOGIN
-=========================== -->
+<!-- ===================================
+LOGIN
+Fecha: 07/03/2026
+=================================== -->
 
 <div id="login">
+
+<div class="login-card">
 
 <h2>Iniciar Sesión</h2>
 
 <input type="text" id="usuario" placeholder="Usuario">
-<br><br>
 
 <input type="password" id="password" placeholder="Contraseña">
-<br><br>
 
 <button onclick="login()">Ingresar</button>
 
@@ -33,19 +35,77 @@
 
 </div>
 
+</div>
 
 
-<!-- ===========================
-     CONTENIDO (oculto)
-=========================== -->
+
+<!-- ===================================
+CONTENIDO PROTEGIDO
+=================================== -->
 
 <div id="contenido">
 
+<div class="encabezado">
+
 <h1>Alamoxtitla</h1>
 
-<p>Bienvenido a tu comunidad</p>
+</div>
 
-<button onclick="cerrarSesion()">Cerrar sesión</button>
+
+
+<div class="contenedor">
+
+
+<!-- MENU -->
+
+<div class="menu">
+
+<a href="#">Revisar</a>
+<a href="#">Revisado</a>
+<a href="#">Publicar</a>
+<a href="#">Usuario</a>
+<a href="#">Bloqueos</a>
+
+<button class="logout-btn" onclick="cerrarSesion()">
+Cerrar sesión
+</button>
+
+</div>
+
+
+
+<!-- CONTENIDO PRINCIPAL -->
+
+<div class="main">
+
+<h1>Avisos</h1>
+
+
+<!-- TARJETA RED SOCIAL -->
+
+<div class="post">
+
+<img src="recursos/imagen1.jpg">
+
+</div>
+
+
+<div class="post">
+
+<img src="recursos/imagen1.jpg">
+
+</div>
+
+
+<div class="post">
+
+<img src="recursos/imagen1.jpg">
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -53,7 +113,12 @@
 
 <script>
 
-/* login demo */
+/* =====================================
+LOGIN DEMO
+Usuario: admin
+Password: 1234
+Fecha: 07/03/2026
+===================================== */
 
 function login(){
 
@@ -68,18 +133,22 @@ document.getElementById("contenido").style.display="block";
 }else{
 
 document.getElementById("mensaje").innerHTML="Datos incorrectos";
+document.getElementById("mensaje").style.color="red";
 
 }
 
 }
 
 
-/* cerrar sesión */
+
+/* =====================================
+CERRAR SESION
+===================================== */
 
 function cerrarSesion(){
 
-document.getElementById("login").style.display="block";
 document.getElementById("contenido").style.display="none";
+document.getElementById("login").style.display="flex";
 
 }
 
