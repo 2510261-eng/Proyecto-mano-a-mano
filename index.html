@@ -6,49 +6,276 @@
 <meta charset="UTF-8">
 <title>Alamoxtitla</title>
 
-<!-- conectar hoja de estilos -->
-<link rel="stylesheet" href="estilos.css">
+<!-- =====================================
+     ICONOS FONT AWESOME
+     Permite usar iconos de usuario y candado
+     Fecha: 07/03/2026
+===================================== -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =====================================
+   VARIABLES DE COLOR
+   Fecha: 07/03/2026
+===================================== */
+
+:root{
+--dorado:#DBB42C;
+}
+
+
+
+/* =====================================
+   ESTILO GENERAL
+===================================== */
+
+body{
+margin:0;
+font-family:Arial;
+background:#0d0d0d;
+color:white;
+}
+
+
+
+/* =====================================
+   LOGIN (pantalla completa)
+===================================== */
+
+#login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+
+/* TARJETA LOGIN */
+
+.login-card{
+width:340px;
+background:#181818;
+padding:35px;
+border-radius:12px;
+box-shadow:0 0 25px rgba(219,180,44,.4);
+}
+
+
+
+/* TITULO LOGIN */
+
+.login-card h2{
+text-align:center;
+color:var(--dorado);
+}
+
+
+
+/* INPUTS */
+
+.input-group{
+position:relative;
+margin-bottom:15px;
+}
+
+
+
+.input-group i{
+position:absolute;
+left:10px;
+top:50%;
+transform:translateY(-50%);
+color:var(--dorado);
+}
+
+
+
+/* CAMPOS TEXTO */
+
+.input-group input{
+width:100%;
+padding:10px 10px 10px 35px;
+border:none;
+background:#222;
+color:white;
+border-radius:5px;
+}
+
+
+
+/* BOTON LOGIN */
+
+button{
+width:100%;
+padding:10px;
+background:var(--dorado);
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+
+/* MENSAJE LOGIN */
+
+#mensaje{
+text-align:center;
+margin-top:10px;
+}
+
+
+
+/* =====================================
+   CONTENIDO PRINCIPAL
+   Se oculta hasta iniciar sesión
+===================================== */
+
+#contenido{
+display:none;
+}
+
+
+
+/* ENCABEZADO */
+
+.encabezado{
+background:black;
+padding:15px;
+text-align:center;
+border-bottom:3px solid var(--dorado);
+}
+
+
+
+.encabezado h1{
+color:var(--dorado);
+margin:0;
+}
+
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor{
+display:flex;
+height:90vh;
+}
+
+
+
+/* MENU */
+
+.menu{
+width:20%;
+background:#0D0D0D;
+padding:20px;
+}
+
+
+
+.menu a{
+display:block;
+color:var(--dorado);
+padding:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+
+
+.menu a:hover{
+background:var(--dorado);
+color:black;
+}
+
+
+
+/* CONTENIDO */
+
+.main{
+width:80%;
+padding:20px;
+background:#242424;
+text-align:center;
+}
+
+
+
+/* IMAGENES */
+
+.main img{
+width:300px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- LOGIN -->
+
+
+<!-- =====================================
+     LOGIN
+     Fecha: 07/03/2026
+===================================== -->
 
 <div id="login">
 
 <div class="login-card">
 
-<h2>Iniciar sesión</h2>
+<h2>Iniciar Sesión</h2>
 
+<form onsubmit="return login()">
+
+<!-- USUARIO -->
+<div class="input-group">
+<i class="fa fa-user"></i>
 <input type="text" id="usuario" placeholder="Usuario">
+</div>
 
+<!-- PASSWORD -->
+<div class="input-group">
+<i class="fa fa-lock"></i>
 <input type="password" id="password" placeholder="Contraseña">
+</div>
 
-<button onclick="login()">Ingresar</button>
+<button>Ingresar</button>
 
 <p id="mensaje"></p>
 
-</div>
+</form>
 
 </div>
 
+</div>
 
 
-<!-- CONTENIDO -->
+
+<!-- =====================================
+     CONTENIDO PROTEGIDO
+     Solo aparece si el login es correcto
+     Fecha: 07/03/2026
+===================================== -->
 
 <div id="contenido">
 
-<header>
-
+<!-- ENCABEZADO -->
+<div class="encabezado">
 <h1>Alamoxtitla</h1>
+</div>
 
-</header>
 
 
 <div class="contenedor">
 
-<!-- MENU -->
+<!-- MENU LATERAL -->
 
 <div class="menu">
 
@@ -58,50 +285,23 @@
 <a href="#">Usuario</a>
 <a href="#">Bloqueos</a>
 
-<button class="logout" onclick="cerrarSesion()">Cerrar sesión</button>
+<a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
 
 </div>
 
 
 
-<!-- AREA PRINCIPAL -->
+<!-- CONTENIDO -->
 
 <div class="main">
 
-<h2>Avisos</h2>
+<h1>Avisos</h1>
 
-
-<div class="post">
-
-<img src="recursos/imagen1.jpg">
-
-<button class="apoyo" onclick="apoyar(this)">
-❤️ Apoyar <span>0</span>
-</button>
-
-</div>
-
-
-<div class="post">
+<p>Bienvenido a tu comunidad</p>
 
 <img src="recursos/imagen1.jpg">
-
-<button class="apoyo" onclick="apoyar(this)">
-❤️ Apoyar <span>0</span>
-</button>
-
-</div>
-
-
-<div class="post">
-
 <img src="recursos/imagen1.jpg">
-
-<button class="apoyo" onclick="apoyar(this)">
-❤️ Apoyar <span>0</span>
-</button>
-
-</div>
+<img src="recursos/imagen1.jpg">
 
 </div>
 
@@ -113,46 +313,53 @@
 
 <script>
 
-/* login demo */
+/* =====================================
+   LOGIN SIMPLE DEMO
+   Usuario: admin
+   Password: 1234
+   Fecha: 07/03/2026
+===================================== */
 
 function login(){
 
-let u=document.getElementById("usuario").value
-let p=document.getElementById("password").value
+let user=document.getElementById("usuario").value;
+let pass=document.getElementById("password").value;
 
-if(u==="admin" && p==="1234"){
+/* Validación simple */
 
-login.style.display="none"
-contenido.style.display="block"
+if(user==="admin" && pass==="1234"){
+
+/* Oculta login */
+
+document.getElementById("login").style.display="none";
+
+/* Muestra contenido */
+
+document.getElementById("contenido").style.display="block";
 
 }else{
 
-mensaje.innerHTML="Datos incorrectos"
+document.getElementById("mensaje").innerHTML="Datos incorrectos";
+document.getElementById("mensaje").style.color="red";
 
 }
 
+return false;
+
 }
 
 
 
-/* cerrar sesion */
+/* =====================================
+   CERRAR SESIÓN
+   Fecha: 07/03/2026
+===================================== */
 
 function cerrarSesion(){
 
-contenido.style.display="none"
-login.style.display="flex"
+document.getElementById("contenido").style.display="none";
 
-}
-
-
-
-/* boton apoyar */
-
-function apoyar(b){
-
-let n=b.querySelector("span")
-
-n.innerText=parseInt(n.innerText)+1
+document.getElementById("login").style.display="flex";
 
 }
 
