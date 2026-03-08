@@ -3,98 +3,367 @@
 
 <head>
 
-<meta charset="utf-8">
-<!-- Permite usar caracteres especiales -->
+<meta charset="UTF-8">
+<title>Alamoxtitla</title>
 
-<title>Mi Comunidad</title>
-<!-- Título de la pestaña -->
+<!-- =====================================
+     ICONOS FONT AWESOME
+     Permite usar iconos de usuario y candado
+     Fecha: 07/03/2026
+===================================== -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="stylesheet" href="estilos.css">
-<!-- 07/03/2026
-Conecta el archivo CSS externo con el HTML -->
+<style>
+
+/* =====================================
+   VARIABLES DE COLOR
+   Fecha: 07/03/2026
+===================================== */
+
+:root{
+--dorado:#DBB42C;
+}
+
+
+
+/* =====================================
+   ESTILO GENERAL
+===================================== */
+
+body{
+margin:0;
+font-family:Arial;
+background:#0d0d0d;
+color:white;
+}
+
+
+
+/* =====================================
+   LOGIN (pantalla completa)
+===================================== */
+
+#login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+
+/* TARJETA LOGIN */
+
+.login-card{
+width:340px;
+background:#181818;
+padding:35px;
+border-radius:12px;
+box-shadow:0 0 25px rgba(219,180,44,.4);
+}
+
+
+
+/* TITULO LOGIN */
+
+.login-card h2{
+text-align:center;
+color:var(--dorado);
+}
+
+
+
+/* INPUTS */
+
+.input-group{
+position:relative;
+margin-bottom:15px;
+}
+
+
+
+.input-group i{
+position:absolute;
+left:10px;
+top:50%;
+transform:translateY(-50%);
+color:var(--dorado);
+}
+
+
+
+/* CAMPOS TEXTO */
+
+.input-group input{
+width:100%;
+padding:10px 10px 10px 35px;
+border:none;
+background:#222;
+color:white;
+border-radius:5px;
+}
+
+
+
+/* BOTON LOGIN */
+
+button{
+width:100%;
+padding:10px;
+background:var(--dorado);
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+
+/* MENSAJE LOGIN */
+
+#mensaje{
+text-align:center;
+margin-top:10px;
+}
+
+
+
+/* =====================================
+   CONTENIDO PRINCIPAL
+   Se oculta hasta iniciar sesión
+===================================== */
+
+#contenido{
+display:none;
+}
+
+
+
+/* ENCABEZADO */
+
+.encabezado{
+background:black;
+padding:15px;
+text-align:center;
+border-bottom:3px solid var(--dorado);
+}
+
+
+
+.encabezado h1{
+color:var(--dorado);
+margin:0;
+}
+
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor{
+display:flex;
+height:90vh;
+}
+
+
+
+/* MENU */
+
+.menu{
+width:20%;
+background:#0D0D0D;
+padding:20px;
+}
+
+
+
+.menu a{
+display:block;
+color:var(--dorado);
+padding:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+
+
+.menu a:hover{
+background:var(--dorado);
+color:black;
+}
+
+
+
+/* CONTENIDO */
+
+.main{
+width:80%;
+padding:20px;
+background:#242424;
+text-align:center;
+}
+
+
+
+/* IMAGENES */
+
+.main img{
+width:300px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
 
 </head>
 
-
 <body>
 
-<!-- ENCABEZADO -->
 
-<div class="encabezado">
-<!-- 07/03/2026
-Contenedor del encabezado del sitio -->
 
-<h1>Alamoxtitla</h1>
-<!-- Título del sitio -->
+<!-- =====================================
+     LOGIN
+     Fecha: 07/03/2026
+===================================== -->
+
+<div id="login">
+
+<div class="login-card">
+
+<h2>Iniciar Sesión</h2>
+
+<form onsubmit="return login()">
+
+<!-- USUARIO -->
+<div class="input-group">
+<i class="fa fa-user"></i>
+<input type="text" id="usuario" placeholder="Usuario">
+</div>
+
+<!-- PASSWORD -->
+<div class="input-group">
+<i class="fa fa-lock"></i>
+<input type="password" id="password" placeholder="Contraseña">
+</div>
+
+<button>Ingresar</button>
+
+<p id="mensaje"></p>
+
+</form>
+
+</div>
 
 </div>
 
 
 
-<!-- CONTENEDOR GENERAL -->
+<!-- =====================================
+     CONTENIDO PROTEGIDO
+     Solo aparece si el login es correcto
+     Fecha: 07/03/2026
+===================================== -->
+
+<div id="contenido">
+
+<!-- ENCABEZADO -->
+<div class="encabezado">
+<h1>Alamoxtitla</h1>
+</div>
+
+
 
 <div class="contenedor">
-<!-- 07/03/2026
-Contiene menú y contenido principal -->
-
-
 
 <!-- MENU LATERAL -->
 
 <div class="menu">
 
-<a href="../Revisar-Revisado/Revisar.html">
-Revisar
-</a>
+<a href="#">Revisar</a>
+<a href="#">Revisado</a>
+<a href="#">Publicar</a>
+<a href="#">Usuario</a>
+<a href="#">Bloqueos</a>
 
-<a href="../Usuarios-Bloqueos/Usuarios.html">
-Revisado
-</a>
-
-<a href="../Usuarios-Bloqueos/Usuarios.html">
-Publicar
-</a>
-
-<a href="../Usuarios-Bloqueos/Usuarios.html">
-Usuario
-</a>
-
-<a href="../Usuarios-Bloqueos/Bloqueos.html">
-Bloqueos
-</a>
-
-
-<a class="cerrar" href="../Revisar-Revisado/Revisar.html">
-Cerrar Sesión
-</a>
+<a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
 
 </div>
 
 
 
-<!-- CONTENIDO PRINCIPAL -->
+<!-- CONTENIDO -->
 
-<div class="contenido">
+<div class="main">
 
 <h1>Avisos</h1>
 
 <p>Bienvenido a tu comunidad</p>
 
-
-
-<div class="galeria">
-
-<img src="recursos/imagen1.jpg" class="aviso">
-
-<img src="recursos/imagen1.jpg" class="aviso">
-
-<img src="recursos/imagen1.jpg" class="aviso">
+<img src="recursos/imagen1.jpg">
+<img src="recursos/imagen1.jpg">
+<img src="recursos/imagen1.jpg">
 
 </div>
 
 </div>
 
 </div>
+
+
+
+<script>
+
+/* =====================================
+   LOGIN SIMPLE DEMO
+   Usuario: admin
+   Password: 1234
+   Fecha: 07/03/2026
+===================================== */
+
+function login(){
+
+let user=document.getElementById("usuario").value;
+let pass=document.getElementById("password").value;
+
+/* Validación simple */
+
+if(user==="admin" && pass==="1234"){
+
+/* Oculta login */
+
+document.getElementById("login").style.display="none";
+
+/* Muestra contenido */
+
+document.getElementById("contenido").style.display="block";
+
+}else{
+
+document.getElementById("mensaje").innerHTML="Datos incorrectos";
+document.getElementById("mensaje").style.color="red";
+
+}
+
+return false;
+
+}
+
+
+
+/* =====================================
+   CERRAR SESIÓN
+   Fecha: 07/03/2026
+===================================== */
+
+function cerrarSesion(){
+
+document.getElementById("contenido").style.display="none";
+
+document.getElementById("login").style.display="flex";
+
+}
+
+</script>
 
 </body>
 </html>
