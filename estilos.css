@@ -1,0 +1,230 @@
+/* ===================================================== */
+/* HOJA DE ESTILOS DEL PROYECTO "MI COMUNIDAD"           */
+/* Fecha de creación: 07/03/2026                         */
+/* Archivo separado para mejorar organización del código */
+/* ===================================================== */
+
+
+/* -------- ESTILO GENERAL DE LA PÁGINA -------- */
+
+body{
+margin:0;
+/* Elimina el margen que agregan los navegadores por defecto */
+
+font-family:Arial, Helvetica, sans-serif;
+/* Define la fuente principal del sitio */
+
+background-color:#242424;
+/* Color de fondo general de la página */
+
+color:white;
+/* Color del texto por defecto */
+}
+
+
+
+/* -------- ENCABEZADO -------- */
+
+.encabezado{
+background-color:#000000;
+/* Color negro para el encabezado */
+
+padding:15px;
+/* Espacio interior */
+
+text-align:center;
+/* Centra el texto horizontalmente */
+
+border-bottom:3px solid #DBB42C;
+/* Línea decorativa dorada */
+}
+
+
+
+.encabezado h1{
+color:#DBB42C;
+/* Color dorado del título */
+
+margin:0;
+/* Elimina margen extra del título */
+}
+
+
+
+/* -------- CONTENEDOR PRINCIPAL -------- */
+
+.contenedor{
+display:flex;
+/* Permite crear columnas */
+
+height:90vh;
+/* Ocupa casi toda la pantalla */
+}
+
+
+
+/* -------- MENÚ LATERAL -------- */
+
+.menu{
+width:20%;
+/* El menú ocupa el 20% del ancho */
+
+background-color:#0D0D0D;
+/* Fondo oscuro */
+
+padding:20px;
+/* Espacio interior */
+}
+
+
+
+/* -------- BOTONES DEL MENÚ -------- */
+
+.menu a{
+display:block;
+/* Hace que cada enlace ocupe toda la línea */
+
+color:#DBB42C;
+/* Color dorado */
+
+padding:10px;
+/* Espacio interno */
+
+margin-bottom:10px;
+/* Espacio entre botones */
+
+text-decoration:none;
+/* Quita el subrayado */
+
+font-weight:bold;
+/* Texto en negrita */
+
+border-radius:5px;
+/* Bordes redondeados */
+
+transition:0.3s;
+/* Animación suave */
+}
+
+
+
+/* -------- EFECTO CUANDO PASAS EL CURSOR -------- */
+
+.menu a:hover{
+background-color:#DBB42C;
+/* Cambia fondo a dorado */
+
+color:black;
+/* Texto negro */
+
+transform:scale(1.05);
+/* Hace que el botón crezca ligeramente */
+}
+
+
+
+/* -------- BOTÓN CERRAR SESIÓN -------- */
+
+.cerrar{
+background-color:#DBB42C;
+/* Fondo dorado */
+
+color:black;
+/* Texto negro */
+
+padding:10px;
+/* Espacio interior */
+
+border-radius:6px;
+/* Bordes redondeados */
+
+margin-top:20px;
+/* Espacio superior */
+
+display:inline-block;
+/* Permite aplicar tamaño correctamente */
+}
+
+
+
+/* -------- CONTENIDO PRINCIPAL -------- */
+
+.contenido{
+width:80%;
+/* Ocupa el resto de la pantalla */
+
+padding:20px;
+/* Espacio interior */
+}
+
+
+
+/* -------- TÍTULO DE CONTENIDO -------- */
+
+.contenido h1{
+text-align:center;
+/* Centra el título */
+}
+
+
+
+/* -------- TEXTO DE BIENVENIDA -------- */
+
+.contenido p{
+text-align:center;
+/* Centra el texto */
+
+color:lightgray;
+/* Color gris claro */
+}
+
+
+
+/* -------- GALERÍA DE AVISOS -------- */
+
+.galeria{
+display:flex;
+/* Organiza imágenes en fila */
+
+flex-direction:column;
+/* Las coloca en columna */
+
+align-items:center;
+/* Centra las imágenes */
+}
+
+
+
+/* -------- ESTILO DE IMÁGENES -------- */
+
+.aviso{
+width:300px;
+/* Ancho de imagen */
+
+height:200px;
+/* Altura de imagen */
+
+margin:10px;
+/* Espacio alrededor */
+
+border-radius:10px;
+/* Bordes redondeados */
+
+box-shadow:0px 5px 10px rgba(0,0,0,0.6);
+/* Sombra */
+
+transition:0.3s;
+/* Animación suave */
+}
+
+
+
+/* -------- EFECTO AL PASAR CURSOR -------- */
+
+.aviso:hover{
+transform:scale(1.05);
+/* La imagen crece ligeramente */
+
+box-shadow:0px 10px 20px rgba(0,0,0,0.9);
+/* Sombra más fuerte */
+}
