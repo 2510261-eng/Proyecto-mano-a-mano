@@ -1,230 +1,209 @@
-/* ===================================================== */
-/* HOJA DE ESTILOS DEL PROYECTO "MI COMUNIDAD"           */
-/* Fecha de creación: 07/03/2026                         */
-/* Archivo separado para mejorar organización del código */
-/* ===================================================== */
+/* =========================================
+   HOJA DE ESTILOS
+   Proyecto: Alamoxtitla
+   Fecha: 07/03/2026
+========================================= */
 
 
-/* -------- ESTILO GENERAL DE LA PÁGINA -------- */
+/* ===== ESTILO GENERAL ===== */
 
 body{
-margin:0;
-/* Elimina el margen que agregan los navegadores por defecto */
-
-font-family:Arial, Helvetica, sans-serif;
-/* Define la fuente principal del sitio */
-
-background-color:#242424;
-/* Color de fondo general de la página */
-
+margin:0; /* elimina margen del navegador */
+font-family:Arial, Helvetica, sans-serif; /* fuente */
+background:#0d0d0d; /* fondo oscuro */
 color:white;
-/* Color del texto por defecto */
 }
 
 
 
-/* -------- ENCABEZADO -------- */
+/* ===== LOGIN ===== */
+
+#login{
+height:100vh; /* ocupa toda la pantalla */
+display:flex; /* centra elementos */
+justify-content:center;
+align-items:center;
+}
+
+
+
+/* TARJETA LOGIN */
+
+.login-card{
+width:320px;
+background:#181818;
+padding:30px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(219,180,44,.4);
+}
+
+
+
+/* TITULO */
+
+.login-card h2{
+text-align:center;
+color:#DBB42C;
+}
+
+
+
+/* INPUTS */
+
+.login-card input{
+width:100%;
+padding:10px;
+margin-top:10px;
+background:#222;
+border:none;
+border-radius:5px;
+color:white;
+box-sizing:border-box; /* evita que el input se salga */
+}
+
+
+
+/* BOTON LOGIN */
+
+.login-card button{
+width:100%;
+margin-top:15px;
+padding:10px;
+background:#DBB42C;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+
+/* ===== CONTENIDO ===== */
+
+#contenido{
+display:none; /* oculto hasta iniciar sesión */
+}
+
+
+
+/* ENCABEZADO */
 
 .encabezado{
-background-color:#000000;
-/* Color negro para el encabezado */
-
+background:black;
 padding:15px;
-/* Espacio interior */
-
 text-align:center;
-/* Centra el texto horizontalmente */
-
 border-bottom:3px solid #DBB42C;
-/* Línea decorativa dorada */
 }
-
-
 
 .encabezado h1{
 color:#DBB42C;
-/* Color dorado del título */
-
 margin:0;
-/* Elimina margen extra del título */
 }
 
 
 
-/* -------- CONTENEDOR PRINCIPAL -------- */
+/* CONTENEDOR */
 
 .contenedor{
 display:flex;
-/* Permite crear columnas */
-
 height:90vh;
-/* Ocupa casi toda la pantalla */
 }
 
 
 
-/* -------- MENÚ LATERAL -------- */
+/* MENU */
 
 .menu{
 width:20%;
-/* El menú ocupa el 20% del ancho */
-
-background-color:#0D0D0D;
-/* Fondo oscuro */
-
+background:#0D0D0D;
 padding:20px;
-/* Espacio interior */
 }
 
 
 
-/* -------- BOTONES DEL MENÚ -------- */
+/* LINKS MENU */
 
 .menu a{
 display:block;
-/* Hace que cada enlace ocupe toda la línea */
-
-color:#DBB42C;
-/* Color dorado */
-
 padding:10px;
-/* Espacio interno */
-
-margin-bottom:10px;
-/* Espacio entre botones */
-
+color:#DBB42C;
 text-decoration:none;
-/* Quita el subrayado */
-
 font-weight:bold;
-/* Texto en negrita */
-
-border-radius:5px;
-/* Bordes redondeados */
-
-transition:0.3s;
-/* Animación suave */
+margin-bottom:10px;
 }
 
 
 
-/* -------- EFECTO CUANDO PASAS EL CURSOR -------- */
+/* EFECTO HOVER */
 
 .menu a:hover{
-background-color:#DBB42C;
-/* Cambia fondo a dorado */
-
+background:#DBB42C;
 color:black;
-/* Texto negro */
-
-transform:scale(1.05);
-/* Hace que el botón crezca ligeramente */
-}
-
-
-
-/* -------- BOTÓN CERRAR SESIÓN -------- */
-
-.cerrar{
-background-color:#DBB42C;
-/* Fondo dorado */
-
-color:black;
-/* Texto negro */
-
-padding:10px;
-/* Espacio interior */
-
 border-radius:6px;
-/* Bordes redondeados */
+}
 
+
+
+/* BOTON CERRAR SESION */
+
+.logout-btn{
 margin-top:20px;
-/* Espacio superior */
-
-display:inline-block;
-/* Permite aplicar tamaño correctamente */
+width:100%;
+padding:10px;
+background:#DBB42C;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
 }
 
 
 
-/* -------- CONTENIDO PRINCIPAL -------- */
+/* ===== CONTENIDO PRINCIPAL ===== */
 
-.contenido{
+.main{
 width:80%;
-/* Ocupa el resto de la pantalla */
-
+background:#242424;
 padding:20px;
-/* Espacio interior */
 }
 
 
 
-/* -------- TÍTULO DE CONTENIDO -------- */
+/* TITULO */
 
-.contenido h1{
+.main h1{
 text-align:center;
-/* Centra el título */
 }
 
 
 
-/* -------- TEXTO DE BIENVENIDA -------- */
+/* ===== TARJETAS TIPO RED SOCIAL ===== */
 
-.contenido p{
-text-align:center;
-/* Centra el texto */
-
-color:lightgray;
-/* Color gris claro */
+.post{
+background:#1a1a1a;
+border-radius:12px;
+padding:10px;
+margin:20px auto;
+width:320px;
+box-shadow:0 5px 15px rgba(0,0,0,.6);
 }
 
 
 
-/* -------- GALERÍA DE AVISOS -------- */
+/* IMAGEN RECTANGULAR */
 
-.galeria{
-display:flex;
-/* Organiza imágenes en fila */
-
-flex-direction:column;
-/* Las coloca en columna */
-
-align-items:center;
-/* Centra las imágenes */
-}
-
-
-
-/* -------- ESTILO DE IMÁGENES -------- */
-
-.aviso{
-width:300px;
-/* Ancho de imagen */
-
-height:200px;
-/* Altura de imagen */
-
-margin:10px;
-/* Espacio alrededor */
-
+.post img{
+width:100%;
+height:180px;
+object-fit:cover; /* evita deformación */
 border-radius:10px;
-/* Bordes redondeados */
-
-box-shadow:0px 5px 10px rgba(0,0,0,0.6);
-/* Sombra */
-
-transition:0.3s;
-/* Animación suave */
 }
 
 
 
-/* -------- EFECTO AL PASAR CURSOR -------- */
+/* EFECTO HOVER */
 
-.aviso:hover{
-transform:scale(1.05);
-/* La imagen crece ligeramente */
-
-box-shadow:0px 10px 20px rgba(0,0,0,0.9);
-/* Sombra más fuerte */
+.post:hover{
+transform:scale(1.02);
+transition:.3s;
 }
