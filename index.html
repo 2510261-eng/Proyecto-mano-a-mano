@@ -6,18 +6,268 @@
 <meta charset="UTF-8">
 <title>Alamoxtitla</title>
 
-<!-- conecta CSS -->
-<link rel="stylesheet" href="estilos.css">
+<style>
+
+/* ==================================================
+ESTILOS GENERALES
+Fecha: 07/03/2026
+================================================== */
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0d0d0d;
+color:white;
+}
+
+/* ==================================================
+LOGIN
+================================================== */
+
+#login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* TARJETA LOGIN */
+
+.login-card{
+
+width:300px; /* tamaño reducido para evitar desbordamiento */
+
+background:#181818;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 0 20px rgba(219,180,44,.4);
+
+box-sizing:border-box; /* evita que padding agrande el contenedor */
+
+}
+
+/* TITULO LOGIN */
+
+.login-card h2{
+text-align:center;
+color:#DBB42C;
+}
+
+/* INPUTS */
+
+.login-card input{
+
+width:100%;
+
+padding:10px;
+
+margin-top:10px;
+
+background:#222;
+
+border:none;
+
+border-radius:6px;
+
+color:white;
+
+box-sizing:border-box; /* evita que se salga del contenedor */
+
+}
+
+/* BOTON LOGIN */
+
+.login-card button{
+
+width:100%;
+
+margin-top:15px;
+
+padding:10px;
+
+background:#DBB42C;
+
+border:none;
+
+border-radius:6px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+/* MENSAJE LOGIN */
+
+#mensaje{
+text-align:center;
+margin-top:10px;
+}
+
+
+
+/* ==================================================
+CONTENIDO PRINCIPAL
+================================================== */
+
+#contenido{
+display:none;
+}
+
+/* ENCABEZADO */
+
+.encabezado{
+background:black;
+padding:15px;
+text-align:center;
+border-bottom:3px solid #DBB42C;
+}
+
+.encabezado h1{
+margin:0;
+color:#DBB42C;
+}
+
+/* CONTENEDOR */
+
+.contenedor{
+display:flex;
+height:90vh;
+}
+
+/* MENU */
+
+.menu{
+width:20%;
+background:#0D0D0D;
+padding:20px;
+}
+
+.menu a{
+display:block;
+padding:10px;
+color:#DBB42C;
+text-decoration:none;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.menu a:hover{
+background:#DBB42C;
+color:black;
+border-radius:6px;
+}
+
+/* BOTON CERRAR SESION */
+
+.logout{
+margin-top:20px;
+padding:10px;
+width:100%;
+background:#DBB42C;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+
+/* ==================================================
+AREA PRINCIPAL
+================================================== */
+
+.main{
+width:80%;
+background:#242424;
+padding:20px;
+text-align:center;
+}
+
+
+
+/* ==================================================
+POST TIPO RED SOCIAL
+================================================== */
+
+.post{
+
+background:#1a1a1a;
+
+border-radius:12px;
+
+width:340px;
+
+margin:20px auto;
+
+padding:10px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.6);
+
+}
+
+/* IMAGEN */
+
+.post img{
+
+width:100%;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+}
+
+
+
+/* ==================================================
+BOTON APOYAR
+================================================== */
+
+.apoyo{
+
+margin-top:10px;
+
+background:#222;
+
+color:#DBB42C;
+
+border:none;
+
+padding:6px 14px;
+
+border-radius:20px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+.apoyo:hover{
+
+background:#DBB42C;
+
+color:black;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
 
-<!-- ===================================
+
+<!-- ==================================================
 LOGIN
-Fecha: 07/03/2026
-=================================== -->
+================================================== -->
 
 <div id="login">
 
@@ -39,9 +289,9 @@ Fecha: 07/03/2026
 
 
 
-<!-- ===================================
+<!-- ==================================================
 CONTENIDO PROTEGIDO
-=================================== -->
+================================================== -->
 
 <div id="contenido">
 
@@ -55,7 +305,6 @@ CONTENIDO PROTEGIDO
 
 <div class="contenedor">
 
-
 <!-- MENU -->
 
 <div class="menu">
@@ -66,7 +315,7 @@ CONTENIDO PROTEGIDO
 <a href="#">Usuario</a>
 <a href="#">Bloqueos</a>
 
-<button class="logout-btn" onclick="cerrarSesion()">
+<button class="logout" onclick="cerrarSesion()">
 Cerrar sesión
 </button>
 
@@ -74,32 +323,45 @@ Cerrar sesión
 
 
 
-<!-- CONTENIDO PRINCIPAL -->
+<!-- CONTENIDO -->
 
 <div class="main">
 
 <h1>Avisos</h1>
 
 
-<!-- TARJETA RED SOCIAL -->
 
 <div class="post">
 
 <img src="recursos/imagen1.jpg">
+
+<button class="apoyo" onclick="apoyar(this)">
+❤️ Apoyar <span>0</span>
+</button>
 
 </div>
 
 
+
 <div class="post">
 
 <img src="recursos/imagen1.jpg">
+
+<button class="apoyo" onclick="apoyar(this)">
+❤️ Apoyar <span>0</span>
+</button>
 
 </div>
 
 
+
 <div class="post">
 
 <img src="recursos/imagen1.jpg">
+
+<button class="apoyo" onclick="apoyar(this)">
+❤️ Apoyar <span>0</span>
+</button>
 
 </div>
 
@@ -113,26 +375,28 @@ Cerrar sesión
 
 <script>
 
-/* =====================================
+/* ==================================================
 LOGIN DEMO
-Usuario: admin
-Password: 1234
-Fecha: 07/03/2026
-===================================== */
+usuario: admin
+password: 1234
+================================================== */
 
 function login(){
 
 let user=document.getElementById("usuario").value;
+
 let pass=document.getElementById("password").value;
 
 if(user==="admin" && pass==="1234"){
 
 document.getElementById("login").style.display="none";
+
 document.getElementById("contenido").style.display="block";
 
 }else{
 
 document.getElementById("mensaje").innerHTML="Datos incorrectos";
+
 document.getElementById("mensaje").style.color="red";
 
 }
@@ -141,14 +405,33 @@ document.getElementById("mensaje").style.color="red";
 
 
 
-/* =====================================
+/* ==================================================
 CERRAR SESION
-===================================== */
+================================================== */
 
 function cerrarSesion(){
 
 document.getElementById("contenido").style.display="none";
+
 document.getElementById("login").style.display="flex";
+
+}
+
+
+
+/* ==================================================
+BOTON APOYAR
+================================================== */
+
+function apoyar(boton){
+
+let contador=boton.querySelector("span");
+
+let numero=parseInt(contador.innerText);
+
+numero++;
+
+contador.innerText=numero;
 
 }
 
