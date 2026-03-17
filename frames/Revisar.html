@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Alamoxtitla - Revisar</title>
+<link rel="stylesheet" href="../estilos.css">
+<style>
+  /* Contenedor principal del frame */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Título y subtítulo usando color dorado */
+  .main h1,
+  .main p {
+    color: var(--dorado);
+    text-align: center;
+  }
+
+  /* Publicaciones estilo red social */
+  .post {
+    background: #181818;
+    border-radius: 12px;
+    margin: 15px 0;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .post h2 {
+    color: var(--dorado);
+    margin: 0 0 10px 0;
+  }
+
+  .post p {
+    color: white;
+    margin: 0 0 10px 0;
+  }
+
+  .post img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+  }
+
+  .post img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  /* Botones de acción */
+  .post button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .aprobar {
+    background: var(--dorado);
+    color: black;
+  }
+
+  .rechazar {
+    background: #ff4d4d;
+    color: white;
+  }
+
+  .aprobar:hover {
+    background: #f2c94c;
+  }
+
+  .rechazar:hover {
+    background: #ff1a1a;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="main">
+  <h1>Revisar Publicaciones</h1>
+  <p>Estas publicaciones necesitan tu revisión</p>
+
+  <!-- Publicación 1 -->
+  <div class="post">
+    <h2>Publicación 1</h2>
+    <p>Contenido pendiente de revisión.</p>
+    <img src="../recursos/imagen1.jpg" alt="Imagen 1">
+    <div style="margin-top:10px;">
+      <button class="aprobar">Aprobar</button>
+      <button class="rechazar">Rechazar</button>
+    </div>
+  </div>
+
+  <!-- Publicación 2 -->
+  <div class="post">
+    <h2>Publicación 2</h2>
+    <p>Contenido pendiente de revisión.</p>
+    <img src="../recursos/imagen1.jpg" alt="Imagen 2">
+    <div style="margin-top:10px;">
+      <button class="aprobar">Aprobar</button>
+      <button class="rechazar">Rechazar</button>
+    </div>
+  </div>
+
+  <!-- Publicación 3 -->
+  <div class="post">
+    <h2>Publicación 3</h2>
+    <p>Contenido pendiente de revisión.</p>
+    <img src="../recursos/imagen1.jpg" alt="Imagen 3">
+    <div style="margin-top:10px;">
+      <button class="aprobar">Aprobar</button>
+      <button class="rechazar">Rechazar</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

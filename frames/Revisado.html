@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Alamoxtitla - Revisado</title>
+<link rel="stylesheet" href="../estilos.css">
+<style>
+  /* Contenedor principal */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .main h1,
+  .main p {
+    color: var(--dorado);
+    text-align: center;
+  }
+
+  /* Publicaciones activas */
+  .post {
+    background: #181818;
+    border-radius: 12px;
+    margin: 15px 0;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .post h2 {
+    color: var(--dorado);
+    margin: 0 0 5px 0;
+  }
+
+  .post .meta {
+    color: #ccc;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+
+  .post p {
+    color: white;
+    margin: 0 0 10px 0;
+  }
+
+  .post img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+  }
+
+  .post img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  /* Botones de acción */
+  .post button {
+    padding: 6px 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .quitar {
+    background: #ff4d4d;
+    color: white;
+  }
+
+  .bloquear {
+    background: var(--dorado);
+    color: black;
+  }
+
+  .quitar:hover {
+    background: #ff1a1a;
+  }
+
+  .bloquear:hover {
+    background: #f2c94c;
+  }
+
+  /* Corazones */
+  .likes {
+    color: #ff4d4d;
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+
+  /* Publicación caducada */
+  .caducada {
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="main">
+  <h1>Publicaciones Revisadas</h1>
+  <p>Controla las publicaciones activas del usuario</p>
+
+  <!-- Publicación 1 -->
+  <div class="post">
+    <h2>Publicación 1</h2>
+    <div class="meta">
+      Usuario: juan123 | Fecha: 15/03/2026 | Tiempo restante: 2 días
+    </div>
+    <p>Contenido de la publicación activa.</p>
+    <img src="../recursos/imagen1.jpg" alt="Imagen 1">
+    <div style="margin-top:10px;">
+      <span class="likes">❤️ 12</span>
+      <button class="quitar">Quitar publicación</button>
+      <button class="bloquear">Bloquear usuario</button>
+    </div>
+  </div>
+
+  <!-- Publicación 2 -->
+  <div class="post">
+    <h2>Publicación 2</h2>
+    <div class="meta">
+      Usuario: maria45 | Fecha: 12/03/2026 | Tiempo restante: Caducada <span class="caducada">⏰</span>
+    </div>
+    <p>Contenido de la publicación caducada.</p>
+    <img src="../recursos/imagen1.jpg" alt="Imagen 2">
+    <div style="margin-top:10px;">
+      <span class="likes">❤️ 8</span>
+      <button class="quitar">Quitar publicación</button>
+      <button class="bloquear">Bloquear usuario</button>
+    </div>
+  </div>
+
+  <!-- Publicación 3 -->
+  <div class="post">
+    <h2>Publicación 3</h2>
+    <div class="meta">
+      Usuario: pedro77 | Fecha: 10/03/2026 | Tiempo restante: 5 horas
+    </div>
+    <p>Contenido de publicación temporal activa.</p>
+    <img src="../recursos/imagen1.jpg" alt="Imagen 3">
+    <div style="margin-top:10px;">
+      <span class="likes">❤️ 20</span>
+      <button class="quitar">Quitar publicación</button>
+      <button class="bloquear">Bloquear usuario</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
