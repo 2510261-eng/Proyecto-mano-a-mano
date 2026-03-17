@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Alamoxtitla</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="login-card">
+    <h2>Iniciar Sesión</h2>
+    <form onsubmit="return login()">
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" id="usuario" placeholder="Usuario">
+      </div>
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" placeholder="Contraseña">
+      </div>
+      <button>Ingresar</button>
+      <p id="mensaje"></p>
+    </form>
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<div id="contenido" style="display:none;">
+
+  <!-- ENCABEZADO -->
+  <div class="encabezado">
+    <h1>Alamoxtitla</h1>
+  </div>
+
+  <div class="contenedor">
+
+    <!-- BARRA LATERAL COMO TARJETA -->
+    <div class="menu" style="
+        position: relative;
+        width:220px;
+        background:#1a1a1a;       /* un poco más claro que el body */
+        padding:20px;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        border-radius:20px;        /* bordes redondeados estilo tarjeta */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* sombra suave */
+    ">
+      <a href="frames/Revisar.html" target="frame-content" style="
+          color: var(--dorado);
+          text-decoration:none;
+          padding:12px;
+          border-radius:8px;
+          transition: background 0.2s;
+          display:block;
+      ">Revisar</a>
+
+      <a href="frames/Revisado.html" target="frame-content" style="
+          color: var(--dorado);
+          text-decoration:none;
+          padding:12px;
+          border-radius:8px;
+          transition: background 0.2s;
+          display:block;
+      ">Revisado</a>
+
+      <a href="frames/Publicar.html" target="frame-content" style="
+          color: var(--dorado);
+          text-decoration:none;
+          padding:12px;
+          border-radius:8px;
+          transition: background 0.2s;
+          display:block;
+      ">Publicar</a>
+
+      <a href="frames/Usuarios.html" target="frame-content" style="
+          color: var(--dorado);
+          text-decoration:none;
+          padding:12px;
+          border-radius:8px;
+          transition: background 0.2s;
+          display:block;
+      ">Usuario</a>
+
+      <a href="frames/Bloqueos.html" target="frame-content" style="
+          color: var(--dorado);
+          text-decoration:none;
+          padding:12px;
+          border-radius:8px;
+          transition: background 0.2s;
+          display:block;
+      ">Bloqueos</a>
+
+      <!-- Botón de cerrar sesión -->
+      <button onclick="cerrarSesion()" style="position:absolute; bottom:20px; left:20px; width:auto;">
+        Cerrar Sesión
+      </button>
+    </div>
+
+    <!-- FRAME PRINCIPAL -->
+    <div class="main-content">
+      <iframe 
+        name="frame-content"
+        id="frame-content"
+        src="frames/revisar.html">
+      </iframe>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function login(){
+  let user = document.getElementById("usuario").value;
+  let pass = document.getElementById("password").value;
+  if(user === "admin" && pass === "1234"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("contenido").style.display="block";
+    return false;
+  }else{
+    document.getElementById("mensaje").innerText="Usuario o contraseña incorrectos";
+    return false;
+  }
+}
+
+function cerrarSesion(){
+  document.getElementById("contenido").style.display="none";
+  document.getElementById("login").style.display="flex";
+}
+
+// Hover sutil para los enlaces
+const menuLinks = document.querySelectorAll('.menu a');
+menuLinks.forEach(link => {
+  link.addEventListener('mouseenter', () => link.style.background = 'rgba(219,180,44,0.2)');
+  link.addEventListener('mouseleave', () => link.style.background = 'transparent');
+});
+</script>
+
+</body>
+</html>
